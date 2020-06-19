@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+body{background-attachment: fixed;}
+
+/*----------头部部分----------*/
+.menus{
+    width: 100%;
+    height: 80px;
+    background-color: #ce785263;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.menus h2{color: white}
+.menus img{width: 120px;}
+
+/*----------主页部分----------*/
+.content{width: 70%;margin-left: 15%;padding: 150px 0;}
+.new_book{margin-top: 180px}
+.new_book h2,.press h2,.d_right h2{color: white;font-weight: bold;padding-bottom: 3px;margin-bottom: 16px;border-bottom: 1px solid #ddd;}
+.nbook_ul{list-style: none;display: flex;flex-wrap: wrap;justify-content: space-between}
+.nbook_li{overflow: hidden;margin: 0 25px 15px 0;width: 20%}
+.nbook_li p{text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.cover{width: 200px;height: auto;margin-bottom: 7px;overflow: hidden;}
+.cover img{width: 100%}
+.press{margin-top: 50px}
+.press_t{width: 100%;margin-top: 30px;}
+.press_t th,.press_t td{text-align: center;padding: 10px;}
+
+/*----------搜索页部分----------*/
+.keyword{word-wrap: break-word;display: block;font-size: 26px;font-weight: bold;color: #494949;margin: 0;padding: 0;line-height: 1.1;}
+.book_ul{list-style: none;margin-top: 30px}
+.book_li{overflow: hidden;zoom: 1;border-top: 1px dashed #ddd;padding: 20px 0 10px;}
+
+.pic{float: left;margin-right: 20px;}
+.pic img{border-width: 0;vertical-align: middle;width: 150px;height: auto;}
+
+.info{overflow: hidden;zoom: 1;color: #666;}
+.info h2{font-size: 14px;margin-bottom: 6px;}
+.info p{color: whitesmoke}
+.pub{margin: 10px 0 8px;}
+.com_num{margin: 10px 0 8px;}
+.origin{text-align: right;color: #66512c}
+
+
+
+/*----------详情页部分----------*/
+.pro_title{font-size: 30px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;margin-top: 0;}
+.pro_content{display: flex;align-items: flex-start;margin-top: 30px}
+.main_pic{width:300px;text-align: center;margin: 3px 12px 0 0;overflow: hidden;}
+.main_pic img{width:100%;}
+.main_info{word-wrap: break-word;margin-left: 20px}
+.main_info button{border: none;padding: 8px 40px;background-color: #ce785263;border-radius: 5px;}
+.main_info a{font-size: 15px;color: white}
+.d_left{width: 70%;padding-right: 50px}
+.d_right{width: 30%;text-align: center}
+.r_book{list-style: none}
+.rbook_li{display: flex;flex-direction: column;align-items: center;}
+.fuwu i{padding: 0 8px;color: #eaeaea;}
+.fuwu img{width: 84px}
+.fuwu p{margin-left: 80px;margin-top: 10px;}
+.fuwu span{margin-left: 10px}
+.price{height: 50px;line-height:50px;background: #ce785263;padding-left: 10px}
+.price span{font-size: 22px;color: red}
+
+
+/*----------尾部部分----------*/
+footer{text-align: center;background-color: #ce785263;padding: 10px;margin-top: 140px}
+footer img{width: 100px;margin-bottom: 5px;}
+footer p{font-size: 14px;color: white;}

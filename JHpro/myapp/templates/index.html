@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}主页{% endblock %}
+
+{% block conetent %}
+    <div class="content" >
+        <form method="post" action="{% url 'myapp:seach' %}">
+        <div class="input-group input-group-lg">
+        {% csrf_token %}
+            <input required="required" type="text" class="form-control" name="keywords" placeholder="输入书名" aria-describedby="sizing-addon1">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">搜 索</button>
+            </span>
+        </div>
+        </form>
+        <div class="new_book">
+            <h2>新书速递</h2>
+            <ul class="nbook_ul">
+                {% for book in new_book %}
+                <li class="nbook_li">
+                    <div class="cover">
+                        <a href="{% url 'myapp:detail' id=book.id %}">
+                            <img src="{{ book.img }}">
+                        </a>
+                    </div>
+                    <div class="nin_fo">
+                        <p>{{ book.book_name }}</p>
+                        <p>{{ book.author }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        <div class="press">
+            <h2>其他出版社</h2>
+            <table class="press_t" border="1">
+                <tr>
+                  <th>名称</th>
+                  <th>链接</th>
+                </tr>
+                <tr>
+                  <td>北京师范大学出版社</td>
+                  <td>http://www.bnup.com/</td>
+                </tr>
+                <tr>
+                  <td>重庆大学出版社</td>
+                  <td>http://www.cqup.com.cn/index.php</td>
+                </tr>
+                <tr>
+                  <td>清华大学出版社</td>
+                  <td>http://www.tup.tsinghua.edu.cn/index.html</td>
+                </tr>
+                <tr>
+                  <td>西安电子科技大学出版社</td>
+                  <td>http://www.xduph.com/</td>
+                </tr>
+                <tr>
+                  <td>北京大学出版社</td>
+                  <td>http://www.pup.cn/</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

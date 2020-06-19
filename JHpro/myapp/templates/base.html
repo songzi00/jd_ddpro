@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}base{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+</head>
+<body style="background-image: url({% static 'img/bg.jpeg' %});background-size:100%" >
+   <header>
+       <div class="menus"><a href="{% url 'myapp:index' %}"><img src="{% static 'img/logo.png' %}"></a><h2>图书聚合搜索系统</h2></div>
+   </header>
+    {% block conetent %}{% endblock %}
+    <footer>
+        <img src="{% static 'img/logo.png' %}">
+        <p>为消遣而读书，常见于独处退居之时;为装饰而读书，多用于高谈阔论之中;为增长才干而读书，主要在于对事物的判断和处理。</p>
+    </footer>
+</body>
+</html>

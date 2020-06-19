@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}详情页{% endblock %}
+
+{% block conetent %}
+    <div class="content" style="width:85%;margin-left:10%;padding-top: 80px;display: flex">
+        {% for product in products %}
+            <div class="d_left">
+                <div class="pro_content">
+                    <div class="main_pic">
+                        <img src="{{ product.img }}">
+                    </div>
+                    <div class="main_info">
+                        <h1 class="pro_title">{{ product.book_name }}</h1>
+                        {% if product.author  %}
+                            <p>作者：{{ product.author }}</p>
+                        {% endif %}
+                        {% if product.press  %}
+                            <p>出版社：{{ product.press }}</p>
+                        {% endif %}
+                        {% if product.book_date  %}
+                            <p>出版日期：{{ product.book_date }}</p>
+                        {% endif %}
+                        {% if product.price  %}
+                            <p class="price">{{ product.origin }}价格：<span>{{ product.price }}</span></p>
+                        {% endif %}
+                        {% if product.book_size  %}
+                            <p>开本：{{ product.book_size }}</p>
+                        {% endif %}
+                        {% if product.book_number  %}
+                            <p>ISBN：{{ product.book_number }}</p>
+                        {% endif %}
+                        {% if product.book_type  %}
+                            <p>系列：{{ product.book_type }}</p>
+                        {% endif %}
+                        {% if product.com_num  %}
+                            <p>评论人数：{{ product.com_num }}</p>
+                        {% endif %}
+                        <div class="fuwu">服务支持：<img src="{% static 'img/buy_icon.png' %}">
+                            <span>闪电退款<i>|</i>上门换新<i>|</i>破损包退换</span>
+                            <p>自提 &nbsp; 49元免基础运费</p>
+                        </div>
+
+                        <a href="{{ product.url }}"><button >前去购买>></button></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d_right">
+                <h2>图书推荐</h2>
+                <ul class="r_book">
+                    {% for book in recommend %}
+                    <li class="rbook_li">
+                        <div class="cover">
+                            <a href="{% url 'myapp:detail' id=book.id %}">
+                                <img src="{{ book.img }}">
+                            </a>
+                        </div>
+                        <div class="nin_fo">
+                            <p>{{ book.book_name }}</p>
+                            <p>{{ book.author }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

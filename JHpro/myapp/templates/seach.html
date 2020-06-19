@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}图书页{% endblock %}
+
+{% block conetent %}
+    <div class="content" style="padding-top: 100px;width: 60%;margin-left: 20%">
+        {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% else %}
+           <h1 class="keyword">图书搜索：{{ keyword }}</h1>
+            <ul class="book_ul">
+                {% for product in setattr_info %}
+                <li class="book_li">
+                    <div class="pic">
+                        <a href="{% url 'myapp:detail' id=product.id  %}">
+                            <img src="{{ product.img }}">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <h2><a href="{% url 'myapp:detail' id=product.id  %}">{{ product.book_name }}</a></h2>
+                        <div class="pub">
+                            {% if product.author  %}
+                                <p>作者：{{ product.author }}</p>
+                            {% endif %}
+                            {% if product.press  %}
+                                <p>出版社：{{ product.press }}</p>
+                            {% endif %}
+                            {% if product.book_date  %}
+                                <p>出版日期：{{ product.book_date }}</p>
+                            {% endif %}
+                            {% if product.price  %}
+                                <p>价格：{{ product.price }}</p>
+                            {% endif %}
+
+                        </div>
+                        {% if product.com_num  %}
+                            <div class="com_num">评论人数：{{ product.com_num }}</div>
+                        {% endif %}
+                        <div class="origin">数据来源：{{ product.origin }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+
+
+    </div>
+
+{% endblock %}
